@@ -45,8 +45,8 @@ it("takes an array of integers of party goers. (-1 represent women, 1 represent 
 });
 
 it("takes an array of strings and returns each line prepended by the correct number.", () => {
-  expects(number(["a", "b", "c"])).toBe(["1: a", "2: b", "3: c"]);
-  expects(number(["a", "b", "c", "d", "e", "f", "g"])).toBe([
+  expect(number(["a", "b", "c"])).toEqual(['1: a', '2: b', '3: c']);
+  expect(number(["a", "b", "c", "d", "e", "f", "g"])).toEqual([
     "1: a",
     "2: b",
     "3: c",
@@ -55,17 +55,17 @@ it("takes an array of strings and returns each line prepended by the correct num
     "6: f",
     "7: g"
   ]);
-  expects(number(["Eggs", "Milk", "Cheese"])).toBe([
+  expect(number(["Eggs", "Milk", "Cheese"])).toEqual([
     "1: Eggs",
     "2: Milk",
     "3: Cheese"
   ]);
-  expects(number(["Cereal", "Peanut Butter", "Bananas"])).toBe([
+  expect(number(["Cereal", "Peanut Butter", "Bananas"])).toEqual([
     "1: Cereal",
     "2: Peanut Butter",
     "3: Bananas"
   ]);
-  expects(number(["1", "1", "2", "3", "5", "8", "13"])).toBe([
+  expect(number(["1", "1", "2", "3", "5", "8", "13"])).toEqual([
     "1: 1",
     "2: 1",
     "3: 2",
@@ -77,7 +77,7 @@ it("takes an array of strings and returns each line prepended by the correct num
 });
 
 it("takes an integral number and determines if it is a square number", () => {
-    expect(isSquare(1)).toBe(false)
+    expect(isSquare(-1)).toBe(false)
     expect(isSquare(4)).toBe(true)
     expect(isSquare(25)).toBe(true)
     expect(isSquare(100)).toBe(true)
